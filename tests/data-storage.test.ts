@@ -68,7 +68,7 @@ describe('SoraPayload', () => {
         ])
 
 
-        expect(dataStorage.getData()).toEqual({
+        expect(dataStorage.export()).toEqual({
             name: 'testName',
             x: 20,
             y: 20,

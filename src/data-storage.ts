@@ -20,7 +20,7 @@ export class DataStorage<T extends IData> {
         return Object.keys(newData)
     }
 
-    getData(): T {
+    export(): T {
         return JSON.parse(JSON.stringify(this.data))
     }
 
