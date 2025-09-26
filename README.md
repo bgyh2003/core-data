@@ -1,1 +1,1 @@
-# corte-data
+# core-data
