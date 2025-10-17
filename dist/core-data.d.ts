@@ -6,9 +6,9 @@ export declare class CoreData<T extends IData> {
     dataEvent: DataEvent<T>;
     constructor(data: T);
     get<K extends keyof T>(key: K): T[K];
-    set<K extends keyof T>(key: K, value: T[K], channelNames?: string[]): void;
+    set<K extends keyof T>(key: K, value: T[K], channelNames?: string[] | null): void;
     export(): T;
-    update(newData: Partial<T>, channelNames?: string[]): void;
+    update(newData: Partial<T>, channelNames?: string[] | null): void;
     addListener(callback: ICallback<T>, keys?: (keyof T)[], channels?: string[]): void;
     removeListener(callback: ICallback<T>): void;
     clearListeners(): void;

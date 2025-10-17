@@ -17,7 +17,7 @@ export class CoreData<T extends IData> {
         return this.dataStorage.get(key)
     }
 
-    set<K extends keyof T>(key: K, value: T[K], channelNames: string[] = []) {
+    set<K extends keyof T>(key: K, value: T[K], channelNames: string[] | null = []) {
         this.dataStorage.set(key, value)
         this.dataEvent.trigger(this.dataStorage.data, [key], channelNames)
     }
@@ -27,7 +27,7 @@ export class CoreData<T extends IData> {
     }
 
 
-    update(newData: Partial<T>, channelNames: string[] = []) {
+    update(newData: Partial<T>, channelNames: string[] | null = []) {
         const updatedKeys = this.dataStorage.update(newData)
         this.dataEvent.trigger(this.dataStorage.data, updatedKeys, channelNames)
     }

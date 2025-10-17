@@ -24,8 +24,11 @@ export class DataEvent<T extends IData> {
     trigger(
         data: T,
         updatedKeys: (keyof T)[],
-        channelNames: string[] = []
+        channelNames: string[] | null = []
     ) {
+
+        // 不推送任何频道
+        if (channelNames === null) return
 
         // 遍历全部监听器
         this.listeners.forEach(({ keys, callback, channels }) => {

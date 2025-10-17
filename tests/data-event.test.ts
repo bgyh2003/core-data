@@ -102,6 +102,8 @@ describe('DataEvent', () => {
         dataEvent.trigger(originData, ["d"], ["ch4"])
         dataEvent.trigger(originData, ["a", "b", "c", "d"], ["ch1", "ch2", "ch3", "ch4"])
 
+        dataEvent.trigger(originData, ["a", "b", "c", "d"], null)
+
         expect(res).toEqual([
             { keys: ['a'], channels: ['ch5'] },
             { keys: ['b'], channels: ['ch6'] },
@@ -109,6 +111,8 @@ describe('DataEvent', () => {
         ])
 
     })
+
+
 
 });
 

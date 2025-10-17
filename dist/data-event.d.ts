@@ -5,5 +5,5 @@ export declare class DataEvent<T extends IData> {
     addListener(callback: ICallback<T>, keys?: (keyof T)[], channels?: string[]): void;
     removeListener(callback: ICallback<T>): void;
     clearListeners(): void;
-    trigger(data: T, updatedKeys: (keyof T)[], channelNames?: string[]): void;
+    trigger(data: T, updatedKeys: (keyof T)[], channelNames?: string[] | null): void;
 }
